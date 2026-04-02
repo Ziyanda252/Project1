@@ -14,7 +14,7 @@ public class PART_1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Rhulanin was here") 
+        System.out.println("hii zee") 
     }
     
 }
