@@ -17,18 +17,38 @@ public class PART_1 {
     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     
-    System.out.println("Please enter a username (a maximum of 5 characters and include an underscore): ");
-    //Input the  username
-    String userName = input.nextLine();
-     //Condition testing using BOOLEAN
-     if(userName.contains("_") && userName.length() <= 5){
+    String captureUserName;
+     String capturePassword;
+    String userName;
+    String userPassword;
+    
+    System.out.println("Create a username");
+     captureUserName = input.nextLine();
+    
+    System.out.println("Please create a password");
+        capturePassword= input.nextLine();
+    
+    System.out.println("Please enter a username");
+    userName = input.nextLine();
+     
+     
+    
+        System.out.println("Please enter a password");
+         userPassword = input.nextLine();
+     
+//Condition testing using BOOLEAN
+     if(userName.contains("_")&& userName.length()<=5){
          System.out.println ("Captured successfully");
      }else{
-         System.out.println("Username invalid, ensure there is an underscore and a maximum of 5 characters");
+         System.out.println("Username invalid");
+          
+     if (password.length() )
+     
          
+       
          
-         System.out.println("Please enter a Pass");
      }
+     
      input.close();
     }
     
