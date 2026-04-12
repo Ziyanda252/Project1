@@ -5,10 +5,8 @@
 package part_1;
 
 import java.util.Scanner;
-/**
- *
- * @author Student
- */
+//https://www.youtube.com/watch?v=MOhiM2SXZl0
+//https://www.youtube.com/watch?v=oz0Qd5H4Onk
   public class QUICK_CHART{
 
 
