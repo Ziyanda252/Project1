@@ -1,22 +1,19 @@
+package com.mycompany.quick_chat3;
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.quick_chat3;
-
 import java.util.ArrayList;
-
 /**
  *
  * @author Student
  */
 public class Message_3 {
 
-    private static void Content() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
+   
 
 
 
@@ -100,47 +97,82 @@ Message_3 longest = storedMessages.get(0);
 
     System.out.println(longest.getMessageContent());
     }
-
- public static void searchMessageID(String id) {
+ 
+   public static String getLongestStoredMessage(){
+       if (storedMessages.isEmpty()) {
+           return "";
+       }
+   Message_3 longest = storedMessages.get(0);
+     for (Message_3 msg : storedMessages) {
+         if (msg.getMessageContent().length()
+             >longest.getMessageContent().length()){
+             
+             longest = msg;
+         }
+         }
+     
+       return longest.getMessageContent();
+   
+       
+       
+   }
+ public static String searchMessageID(String id) {
      for (Message_3 msg : sentMessages) {
             if (msg.getMessageId().equals(id)) {
                 System.out.println(msg.getMessageContent());
-return;
+
 
      }
   }
- System.out.println("Message not found.");
-}
-public static void searchRecipient(String recipient) {
-     for (Message_3 msg : storedMessages) {
-        if (msg.getRecipientCell()
-            .equals(recipient)) {
-        System.out.println(msg.getMessageContent());
-     }
-   }
-}
-public static void deleteMessageByHash(String hash) {
- for (int i = 0;
-      i < storedMessages.size();
-      i++) {
-    if (storedMessages.get(i)
-             .createMessageHash()
-             .equals(hash)) {
-        storedMessages.remove(i);
-    System.out.println( "Message deleted.");
-       return;
-    }
-}
-    System.out.println("Hash not found.");
-}
-    public static void displayReport() {
-      for (Message_3 msg : sentMessages) {
-     System.out.println( "\nHash: "+ msg.createMessageHash());
+    return "Message not found.";
 
-     System.out.println(  "Recipient: " + msg.getRecipientCell());
-
-    System.out.println(  "Message: "+ msg.getMessageContent());
-  }
+    
  }
-}
+ 
+    public static String searchRecipient(String recipient) {
+
+    StringBuilder result = new StringBuilder();
+
+    for (Message_3 msg : storedMessages) {
+
+        if (msg.getRecipientCell().equals(recipient)) {
+
+    result.append(msg.getMessageContent()) .append("\n");
+
+        }
+    }
+
+    if (result.length() == 0) {
+        return "Recipient not found.";
+    }
+
+    return result.toString();
+    }
+
+    public static boolean deleteMessageByHash(String hash) {
+    for (int i = 0; i < storedMessages.size(); i++) {
+
+        if (storedMessages.get(i).createMessageHash().equals(hash)) {
+
+            storedMessages.remove(i);
+
+            return true;
+        }
+    }
+    return false;
+    }
+   public static void displayReport() {
+
+    for (Message_3 msg : sentMessages) {
+
+        System.out.println("\nHash: " + msg.createMessageHash());
+
+        System.out.println("Recipient: " + msg.getRecipientCell());
+
+        System.out.println("Message: " + msg.getMessageContent());
+        
+    }
+   }
+        
+    }
 
